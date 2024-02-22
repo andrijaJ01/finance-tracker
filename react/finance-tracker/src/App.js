@@ -1,6 +1,10 @@
 import React , {useState, useEffect} from "react";
 import api from './api'
-
+import Button from "react-bootstrap/Button"
+import Form from "react-bootstrap/Form"
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const App = () => {
 	const [trans,setTrans] = useState([]);
@@ -40,7 +44,7 @@ const App = () => {
 	};
 
 	return (
-		<div>
+		<section>
 			<nav className="navbar navbar-dark bg-primary">
 				<div className="container-fluid">
 					<a className="navbar-brand text-dark" href="/">
@@ -49,8 +53,8 @@ const App = () => {
 				</div>
 			</nav>
 
-		<div className="container">
-			<form onSubmit={handleFormSubmit}>
+		<Container>
+			<Form onSubmit={handleFormSubmit}>
 				<div className="mb-3 mt-3">
 					<label htmlFor="amount" className="form-label">Amount</label>
 					<input type="text" className="form-control" id="amt" name="amt" onChange={handleInputChange} value={formData.amt} />
@@ -81,10 +85,12 @@ const App = () => {
 				<button type="submit" className="btn btn-primary">
 					Submit Form
 				</button>
-			</form>
-		</div>
+			</Form>
+		</Container>
+		
+		
 
-		</div>
+		</section>
 	)
 }
 export default App;
